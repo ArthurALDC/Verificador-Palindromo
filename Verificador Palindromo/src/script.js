@@ -1,6 +1,7 @@
-function palindrome(str) {
+function palindrome() {
   // Remove espaços em branco e caracteres especiais, e converte para letras minúsculas
-  str = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+  var palavra = prompt("Digite uma palavra:");
+  str = palavra.toLowerCase().replace(/[^a-z0-9]/g, '');
 
   var length = str.length;
   for (var i = 0, j = length - 1; i < j; i++, j--) {
@@ -11,5 +12,9 @@ function palindrome(str) {
 
   return true;
 }
-
-console.log(palindrome("race car")); // true
+// Chamar a função para verificar se a palavra digitada pelo usuário é um palíndromo
+if (palindrome()) {
+  console.log("É um palíndromo!");
+} else {
+  console.log("Não é um palíndromo!");
+}
